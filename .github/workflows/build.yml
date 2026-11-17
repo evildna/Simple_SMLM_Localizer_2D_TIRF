@@ -22,7 +22,7 @@ jobs:
       - name: Groovy script is in sync with the Java source
         run: |
           IJ_JAR=$(ls ~/.m2/repository/net/imagej/ij/*/ij-*.jar | head -1)
-          JAVAC=javac IJ_JAR="$IJ_JAR" ./build.sh
+          JAVAC=javac IJ_JAR="$IJ_JAR" bash build.sh
           git diff --exit-code SMLM_Localization_Fiji.groovy
       - uses: actions/upload-artifact@v4
         if: matrix.java == '11'
