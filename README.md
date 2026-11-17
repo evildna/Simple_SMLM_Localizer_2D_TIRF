@@ -216,7 +216,7 @@ Sample data © 2026 Xian Hu / University of Oslo, provided for testing and demon
 ## Building from source
 
 ```bash
-./build.sh /Applications/Fiji.app     # javac and ij.jar of a local Fiji; also regenerates the Groovy script
+bash build.sh /Applications/Fiji.app  # javac and ij.jar of a local Fiji; also regenerates the Groovy script
 ```
 
 or with Maven (`pom.xml`, parent `pom-scijava`): `mvn package` → `target/SMLM_Localization-1.0.0.jar` (runs the
