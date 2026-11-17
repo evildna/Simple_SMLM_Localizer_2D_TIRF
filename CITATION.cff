@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below and this repository."
+title: "SMLM Localization: an ImageJ/Fiji plugin for single-molecule localisation in sparse-emitter time series"
+type: software
+authors:
+  - family-names: Hu
+    given-names: Xian
+    affiliation: "Department of Biosciences, University of Oslo, Oslo, Norway"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/evildna/Simple_SMLM_Localizer_2D_TIRF"
+keywords:
+  - single-molecule localisation microscopy
+  - SMLM
+  - TIRF
+  - ImageJ
+  - Fiji
+preferred-citation:
+  type: article
+  title: "Hour-long live-cell TIRF imaging of GFP-talin at ensemble and single-molecule level with low-duty-cycle picosecond supercontinuum excitation"
+  authors:
+    - family-names: Margadant
+      given-names: Felix
+    - family-names: Bakke
+      given-names: Oddmund
+    - family-names: Sheetz
+      given-names: Michael P.
+    - family-names: Hu
+      given-names: Xian
+  status: submitted
