@@ -1,0 +1,31 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: ['11', '21']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - name: Maven build and unit tests
+        run: mvn -B package
+      - name: Groovy script is in sync with the Java source
+        run: |
+          IJ_JAR=$(ls ~/.m2/repository/net/imagej/ij/*/ij-*.jar | head -1)
+          JAVAC=javac IJ_JAR="$IJ_JAR" ./build.sh
+          git diff --exit-code SMLM_Localization_Fiji.groovy
+      - uses: actions/upload-artifact@v4
+        if: matrix.java == '11'
+        with:
+          name: SMLM_Localization-jar
+          path: target/SMLM_Localization-*.jar
